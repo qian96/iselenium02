@@ -28,14 +28,14 @@ public abstract class WebUIBase {
     public void begin() {
         //加载配置文件，注意需要事先将配置文件放到user.home下
         logger.info("Load properties file:" + propFileName);
-        Properties prop = loadFromEnvProperties(propFileName);
+        //Properties prop = loadFromEnvProperties(propFileName);
 
         //获取浏览器driver路径
         logger.info("Load webdriver path");
-        firefoxPath = prop.getProperty("FIREFOX_PATH");
-        chromePath = prop.getProperty("CHROME_PATH");
-        logger.info("firefoxPath = " + firefoxPath);
-        logger.info("chromePath = " + chromePath);
+        //firefoxPath = prop.getProperty("FIREFOX_PATH");
+        //chromePath = prop.getProperty("CHROME_PATH");
+        //logger.info("firefoxPath = " + firefoxPath);
+        //logger.info("chromePath = " + chromePath);
 
         //设定当前运行的浏览器
         //需要在环境变量"currentBrowser"中配置当前运行什么浏览器, 可选值"firefox","chrome","nogui"
@@ -79,7 +79,7 @@ public abstract class WebUIBase {
     }
 
     //加载配置文件
-    private Properties loadFromEnvProperties(String propFileName) {
+  /*  private Properties loadFromEnvProperties(String propFileName) {
         Properties prop = null;
 
         String path = System.getProperty("user.home");
@@ -98,7 +98,7 @@ public abstract class WebUIBase {
         }
 
         return prop;
-    }
+    }*/
 
     private void setCurBrowser() {
         String value = System.getenv("currentBrowser");
